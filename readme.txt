@@ -62,3 +62,26 @@
     实际开中需要一个远程的git仓库,本质上与本地仓库无区别,不同点在于远程的仓库可以被多人同时访问,协同开发
     通常由公司搭建,内部使用,或是购买公共的私有git服务器
     学习阶段使用公共的git库:GitHub Gitee
+
+    1.…or create a new repository on the command line
+    echo "# xxxxxx" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/332684470/xxxxxx
+    git push -u origin main
+
+    2.…or push an existing repository from the command line     本地库上传
+    git remote add origin https://github.com/332684470/xxxxxx
+   #git remote add remotename url
+    git branch -M main
+   #修改分支的名字为main
+    git push -u origin main
+   #将代码上传至服务器
+
+8.远程仓库的操作
+    git remote  列出当前关联的远程库
+    git add 远程库名 url  #关联远程库
+    git remote remove 远程库名  #删除远程库
+    git push -u 远程库名 分支名  #向远程库推送代码,并和当前分支关联

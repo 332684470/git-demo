@@ -85,6 +85,7 @@
     git add 远程库名 url          #关联远程库
     git remote remove 远程库名    #删除远程库
     git push -u 远程库名 分支名    #向远程库推送代码,并和当前分支关联
+    git push 远程库名 本地分支:远程分支
     git clone url                 #从远程库下载代码
     git push                      #如果本地库的版本低于远程库,push默认无法推送
     git fetch                     #要想推送成功,必须确保本地库和远程库版本一致,

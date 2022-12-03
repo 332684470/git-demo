@@ -1,3 +1,4 @@
+官方文档:https://git-scm.com/docs
 1.配置:
     name:git config --global user.name "wzk"
     email:git config --global user.email "332684470@qq.com"
@@ -82,7 +83,7 @@
 
 8.远程仓库的操作
     git remote                   #列出当前关联的远程库
-    git add 远程库名 url          #关联远程库
+    git remote add 远程库名 url          #关联远程库
     git remote remove 远程库名    #删除远程库
     git push -u 远程库名 分支名    #向远程库推送代码,并和当前分支关联
     git push 远程库名 本地分支:远程分支
@@ -93,3 +94,22 @@
                                     前分支自动合并,故fetch拉取代码之后需要手动合并
     git pull                      #从服务器上拉取代码且自动合并(有冲突也需要手动处理)
 ***推送代码之前一定先从远程库中拉取最新代码
+
+9.标签
+    当头指针HEAD没有指向某个分支的头部时,这种状态称为分离指针(HEAD detached),
+    分离头指针的状态下我们也可以操作代码,但是这些操作不会出现任何分支上,所以不建议在
+    分离头指针的状态下操作代码,
+    若必须进行该操作,可以先创建分支在操作
+    git switch -c 分支名 提交id 
+    当提交数过多时,分辨id极其麻烦,可以为提交记录设置标签方便辨别
+    git tag 标签名
+    git tag 标签名 提交id
+    git push 远程库名 标签名
+    git push 远程库名 --tags            推送所有标签
+    git tag -d 标签名                   删除本地标签
+    git push 远程库名 --delete 标签名    删除远程标签
+
+10.gitignore 
+    默认情况下,git会监视项目中的所有内容,但有些内容如各种依赖包,配置文件,日志等
+    我们不希望被git监管,可以在项目目录中添加一个.gitignore文件,来设置那些需要被
+    忽略的文件或内容
